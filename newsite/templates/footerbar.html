@@ -1,4 +1,4 @@
-{% load static %}
+{% load  cms_tags menu_tags sekizai_tags static %}
 
 <!-- Footer
 	================================================== -->
@@ -48,41 +48,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="footer-nav">
-          <ul>
-            <li>
-              <a href="https://www.mdcallianceparty.org/news/" target="_blank"
-                >News</a
-              >
-            </li>
-            <li><a href="">Videos</a></li>
-            <li>
-              <a
-                href="https://payments.mdcallianceparty.org/#/donations"
-                target="_blank"
-                ><strong class="text-danger">Donate</strong></a
-              >
-            </li>
-            <li>
-              <a href="https://www.mdcallianceparty.org/" target="_blank"
-                >Party Platform</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="paid-for">
-          <p class="no-margin">
-            <a href="">PAID FOR BY TEAM CHAMISA NOW </a>
-          </p>
-        </div>
-
-        <div class="copyright">
-          <p>
-            &copy; CHAMISA 2020.
-          </p>
-        </div>
-
+         {% placeholder 'footer' %} 
         <p class="small text-muted no-margin">
           <a href="#contactme" data-toggle="modal">&nbsp;</a>
         </p>

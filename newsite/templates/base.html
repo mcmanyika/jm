@@ -10,6 +10,15 @@
     {% include 'head.html' %}
     
     {% render_block "css" %}
+    {{ ALDRNYN_SNAKE.render_head }}
+
+    {% if request.toolbar %}
+    <style>
+      .cms-toolbar-expanded .navbar-custom {
+        margin-top: 100px;
+      }
+    </style>
+    {% endif %}
   </head>
   <body>
     {% cms_toolbar %}
@@ -24,7 +33,7 @@
         <div id="main">
             <div id="header"
                   class="header-bg header-large header-nav-top offset-bottom"
-                  style="background-image: url('/static/assets/images/landing3.jpg');"
+                  style="background-image: url('/static/assets/images/jacob.jpg');"
                 >
                 {% include 'index.html' %}
                 <div class="header-bg-wrapper">
@@ -38,6 +47,10 @@
       </div>
       <div>
       </div>
+
+      <div style="margin-top: 180px">
+      {% include 'footerbar.html' %}
+    </div>
     </div>
     
 

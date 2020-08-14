@@ -33,11 +33,15 @@
       <div>{% placeholder "banner" %}</div>
     
     <div class="container">
-      {% block content %} {% endblock %}
+      <div class="col-md-8">
+        {% block content %} {% endblock %}
+      </div>
+      <div class="col-md-4">
+      {% placeholder 'right_side_bar' %}
+      </div>
     </div>
-    <div class="col-12 footer">
-      {% placeholder 'footer' %}
-    </div>
+    <div style="margin-top: 180px">
+      {% include 'footerbar.html' %}
     </div>
     {% include 'scripts.html' %} 
     {% render_block "js" %}

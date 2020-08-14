@@ -1,0 +1,206 @@
+.navbar-default {
+  background-color: #afafb39e !important;
+  border-color: #141433 !important;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ba1c24 !important;
+}
+.header-bg-wrapper .logo-container .logo {
+  width: 600px;
+  height: 280px;
+  background: #d7d7d900 !important;
+}
+.main-content,
+.wrapper {
+  padding-top: 5px !important;
+}
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+h2.heading {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 5px !important;
+}
+#footer.with-overlap .container-box {
+  margin-top: -90px !important;
+}
+.icon-bar a:hover {
+  background-color: #000;
+}
+.main-content,
+.wrapper {
+  padding-top: 0px;
+}
+.main-content,
+.wrapper {
+  padding-top: 1px !important;
+}
+
+.facebook {
+  background: #99999d;
+  color: white;
+}
+
+.twitter {
+  background: #99999d;
+  color: white;
+}
+
+.google {
+  background: #99999d;
+  color: white;
+}
+
+.instagram {
+  background: #99999d;
+  color: white;
+}
+
+.youtube {
+  background: #99999d;
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+
+/*Full screen overlay*/
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  color: #fff;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 40px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {
+    overflow-y: auto;
+  }
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 130px;
+    right: 35px;
+  }
+}
+
+.SideBarOverlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  background-color: #1b1c1d;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.SideBarOverlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.SideBarOverlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  /* color: #818181; */
+  display: block;
+  transition: 0.3s;
+}
+
+.SideBarOverlay a:hover,
+.SideBarOverlay a:focus {
+  color: #f1f1f1;
+}
+
+.SideBarOverlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .SideBarOverlay a {
+    font-size: 20px;
+  }
+  .SideBarOverlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+.hd {
+  width: 100px;
+  height: 30px;
+  background: red;
+  transition: width 2s;
+}
+.hd:hover {
+  width: 300px;
+}
