@@ -28,9 +28,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z5u_2#s7(hx_7zxv&wdgt*&htwpq63c!7os)1c61j=)x$u15(i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 if DEBUG:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['164.90.177.56']
 else:
     ALLOWED_HOSTS = ['164.90.177.56', 'www.freejacob.cf',
                      'freejacob.cf']
