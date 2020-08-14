@@ -28,12 +28,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z5u_2#s7(hx_7zxv&wdgt*&htwpq63c!7os)1c61j=)x$u15(i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 if DEBUG:
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ['46.101.184.81', 'www.nelsonchamisa.online',
-                     'nelsonchamisa.online']
+    ALLOWED_HOSTS = ['164.90.177.56', 'www.freejacob.cf',
+                     'freejacob.cf']
 
 
 # Application definition
@@ -259,7 +259,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'site_admin',
+            'NAME': 'db_admin',
             'USER': 'bigboy',
             'PASSWORD': 'focus@1',
             'HOST': 'localhost',
