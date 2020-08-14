@@ -150,7 +150,6 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
-    'cms',
     'menus',
     'sekizai',
     'treebeard',
@@ -182,6 +181,9 @@ INSTALLED_APPS = [
     'djangocms_video',
     'newsite',
     'blog',
+
+
+    'cms',
 
     'aldryn_apphooks_config',
     'aldryn_categories',
