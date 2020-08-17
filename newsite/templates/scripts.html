@@ -1,16 +1,26 @@
  {% load static %}
 
   <script>
-    function openNav() {
-      document.getElementById("LeftBar").style.width = "60%";
-      document.getElementById("LeftBar").style.zIndex ="2000";
-      document.getElementById("main").style.marginLeft = "60%";
+    function openNav(x) {
+      if (x.matches) { // If media query matches
+        document.getElementById("LeftBar").style.width = "60%";
+        document.getElementById("LeftBar").style.zIndex ="2000";
+        document.getElementById("main").style.marginLeft = "60%";
+      } else {
+        document.getElementById("LeftBar").style.width = "28%";
+        document.getElementById("main").style.marginLeft = "60%";
+        document.getElementById("main").style.marginLeft = "28%";
+      }
     }
 
     function closeNav() {
       document.getElementById("LeftBar").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
     }
+
+    var x = window.matchMedia("(max-width: 500px)")
+    openNav(x) // Call listener function at run time
+    x.addListener(openNav) // Attach listener function on state changes
   </script>
   <script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
   <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
