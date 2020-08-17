@@ -30,7 +30,7 @@ SECRET_KEY = 'z5u_2#s7(hx_7zxv&wdgt*&htwpq63c!7os)1c61j=)x$u15(i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 if DEBUG:
-    ALLOWED_HOSTS = ['www.freejacob.cf',
+    ALLOWED_HOSTS = ['127.0.0.1', 'www.freejacob.cf',
                      'freejacob.cf', '164.90.177.56']
 else:
     ALLOWED_HOSTS = ['164.90.177.56', 'www.freejacob.cf',
