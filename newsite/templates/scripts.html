@@ -21,7 +21,7 @@
     }
 
     var x = window.matchMedia("(max-width: 500px)")
-    openNav(x) // Call listener function at run time
+    openNav() // Call listener function at run time
     x.addListener(openNav) // Attach listener function on state changes
   </script>
   <script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
