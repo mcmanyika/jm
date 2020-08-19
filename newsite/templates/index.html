@@ -3,13 +3,18 @@
 
     <!-- Header Bottom Links
 	================================================== -->
-    <div class="header-links">
+  
+    <div class="container">
+      <div class="header-text">
+        <div class="col-xs-12">
+            <div class="col-xs-11"></div>
+            <div class="col-xs-1">{% placeholder 'banner_text' %}</div>
+        </div>
+      </div>
+    </div>     
+     <div class="header-links">
         <div class="container">
           <div class="header-links-wrapper">
-          <div class="container">
-            <div class="col-xs-5">&nbsp;</div>
-            <div class="col-xs-4">{% placeholder 'banner_text' %}</div>
-          </div>
             <div class="col-md-4  col-xs-6 no-padding">
               <!-- Modify style with color classes: 'accent', 'solid-accent', 'solid-primary' (default: no extra class) -->
               <div
@@ -65,7 +70,8 @@
         </div>
         <!-- end container -->
       
-  <div id="section-videos" class="wrapper video-list">
+  
+ <div id="section-videos" class="wrapper video-list">
     <div class="container">
       <div style="padding:50px; text-align: center;">
         {% placeholder 'welcome' %}
@@ -74,16 +80,21 @@
   </div>
   
 <div class="action">
-  {% placeholder 'action' %}
+  {% placeholder 'register' %}
+</div>
+<div class="jumbotron">
+  {% placeholder 'pillars' %}
 </div>
  <div class="col-md-12">
   {% placeholder 'video' %}
 </div> 
     
-{% comment %} <div id="news" class="col-md-12 quote">
+{% comment %} <div id="news" class="col-md-12">
       {% placeholder 'news' %}
+</div>  {% endcomment %}
+{% comment %} <div id="call" class="col-md-12">
+  {% placeholder 'call' %}
 </div> {% endcomment %}
-
 <div id="footer" class="col-md-12 footer">
       {% placeholder 'footer' %}
 </div>

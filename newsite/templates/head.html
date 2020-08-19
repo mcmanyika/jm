@@ -14,6 +14,9 @@
       href="{% static 'assets/css/owl-carousel.css' %}"
       media="screen"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         .banner {
             width: 100%;
@@ -74,6 +77,23 @@
           right: 35px;
           }
         }
+
+        .card {
+        position: relative;
+        display: -ms-flexbox;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+        min-height: 50px;
+}
 
       .header-bg-wrapper {
         height:0 !important;
@@ -231,7 +251,7 @@ border-radius: 0;
 .action {
     background: #233F94;
     color: #fff;
-    padding: 80px 20px;
+    padding: 20px;
     position: relative;
 }
 .action .inner {
@@ -240,8 +260,14 @@ border-radius: 0;
 }
 .action h2.title {
     color: #fff;
-    max-width: 465px;
     text-align: center;
+}
+
+#call {
+    background: #131433;
+    color: #fff;
+    padding: 80px 20px;
+    position: relative;
 }
 
 .quote {
@@ -303,7 +329,7 @@ ul.social {
     margin: 0 0 18px;
 }
 .h1, h1 {
-    font: 800 70px/65px brother-1816,sans-serif;
+    font: 800 70px/100px brother-1816,sans-serif;
     font-weight: 800;
     letter-spacing: -4px;
 }
@@ -314,31 +340,90 @@ ul.social {
 }
 
 }
-@media (max-width: 700px){
-.h1, h1 {
-    font: 800 32px/38px brother-1816,sans-serif;
-    font-weight: 800;
-    letter-spacing: -3px;
-}
-.h2, h2 {
-  font-size: 18px;
-}
-.LeftBar {
-  width: 60%;
-  z-index:10;
-  
-}
+@media (max-width: 599px){
 
-.header-links {
-    margin-top: -240px;
-  }
-}
-@media (min-width: 701px){
-.header-links {
+.header-text {
         position: absolute;
-        margin-top: -425px;
+        margin-top: -200px;
         margin-bottom: -75px;
       }
-}    
+.h1, h1 {
+    font: 800 30px/30px brother-1816,sans-serif;
+    font-weight: 800;
+    letter-spacing: -4px;
+}         
+h2, .h2 {
+    font-size: 10px;
+}      
+
+}
+@media (min-width: 600px) and (max-width: 735px){
+
+.header-text {
+        position: absolute;
+        margin-top: -280px;
+        margin-bottom: -75px;
+      }
+.h1, h1 {
+    font: 800 45px/45px brother-1816,sans-serif;
+    font-weight: 800;
+    letter-spacing: -4px;
+}         
+h2, .h2 {
+    font-size: 20px;
+}      
+
+}
+
+@media (min-width: 736px) and (max-width: 929px){
+
+.header-text {
+        position: absolute;
+        margin-top: -300px;
+        margin-bottom: -75px;
+      }
+.h1, h1 {
+    font: 800 50px/50px brother-1816,sans-serif;
+    font-weight: 800;
+    letter-spacing: -4px;
+}         
+h2, .h2 {
+    font-size: 20px;
+}      
+
+}
+@media (min-width: 930px) and (max-width: 1000px){
+
+.header-text {
+        position: absolute;
+        margin-top: -400px;
+        margin-bottom: -75px;
+      }   
+.h1, h1 {
+    font: 800 50px/50px brother-1816,sans-serif;
+    font-weight: 800;
+    letter-spacing: -4px;
+}         
+h2, .h2 {
+    font-size: 20px;
+}
+} 
+@media (min-width: 1001px) and (max-width: 1400px){
+
+.header-text {
+        position: absolute;
+        margin-top: -500px;
+        margin-bottom: -75px;
+      }      
+}  
+
+@media (min-width: 1401px){
+
+.header-text {
+        position: absolute;
+        margin-top: -550px;
+        margin-bottom: -75px;
+      }      
+} 
 
     </style>
