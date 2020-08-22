@@ -19,7 +19,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    url(r'^admin/', admin.site.urls),  # NOQA
+    url(r'^secure/', admin.site.urls),  # NOQA
     url(r'/video/', index, name='video'),
     url(r'^taggit_autosuggest/', include('taggit_autosuggest.urls')),
 
