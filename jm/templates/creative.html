@@ -1,0 +1,303 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <link rel="icon" href="../static/creative/img/logo.png" />
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
+    <!-- Author -->
+    <meta name="author" content="31 July Movement" />
+    <!-- description -->
+    <meta name="description" content="" />
+    <!-- keywords -->
+    <meta name="keywords" content=" " />
+    <!-- Page Title -->
+    <title>{% block title %}31 July Movement{% endblock title %}</title>
+    {% include 'creative_head.html' %} {% render_block "css" %}
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    {% cms_toolbar %}
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="center">
+        <div class="loader loader-32">
+          <div class="loader-container">
+            <div class="ball-wrapper">
+              <div class="ball-holder">
+                <div class="ball"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+            <div class="ball-wrapper">
+              <div class="ball-holder">
+                <div class="ball"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+            <div class="ball-wrapper">
+              <div class="ball-holder">
+                <div class="ball"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!--Header Start-->
+    {% include 'creative_upper.html' %}
+    <!--Header End-->
+
+    <!--About sec start-->
+    <section class="about-sec" id="about-sec">
+      <div class="about-overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-6 services-area padding-top padding-bottom">
+            <div class="yellow-overlay"></div>
+            <div class="row no-gutters wow fadeInLeft">
+              <div class="col-12 col-lg-6 services text-center">
+                <div class="service-card">
+                  <div class="icon-holder">
+                    <i class="lni lni-briefcase"></i>
+                  </div>
+                  <h4 class="card-heading">Aims</h4>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6 services text-center">
+                <div class="service-card">
+                  <div class="icon-holder">
+                    <i class="lni lni-bulb"></i>
+                  </div>
+                  <h4 class="card-heading">Principles</h4>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6 services text-center">
+                <div class="service-card">
+                  <div class="icon-holder">
+                    <i class="lni lni-heart"></i>
+                  </div>
+                  <h4 class="card-heading">Objectives</h4>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6 services text-center">
+                <div class="service-card">
+                  <div class="icon-holder">
+                    <i class="las la-wallet"></i>
+                  </div>
+                  <h4 class="card-heading">Vision</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-lg-6 about-area padding-top padding-bottom text-center text-lg-left"
+          >
+            <div class="about-content wow fadeInRight">
+              <div class="about-inner-content">
+                <h4 class="heading">{% placeholder 'about_aim' %}</h4>
+                <p class="text">{% placeholder 'about_aim_text' %}</p>
+                <a href="#about-sec" class="btn anim-btn rounded-pill"
+                  >LEARN MORE <span></span><span></span><span></span
+                  ><span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--About sec End-->
+
+    <!--portfolio section start-->
+    <section
+      class="portfolio-sec company-portfolio-section padding-top"
+      id="company-portfolio-section"
+    >
+      <div class="container">
+        <div class="section-heading">
+          <div class="row">
+            <div
+              class="col-lg-6 wow fadeInUp text-center text-lg-left"
+              data-wow-delay="300ms"
+            >
+              <h4 class="heading">Show Your Support</h4>
+            </div>
+            <div class="col-md-12 pt-5">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="{% static 'creative/img/1.png' %}" alt="img" />
+                </div>
+                <div class="col-md-4">
+                  <img src="{% static 'creative/img/2.png' %}" alt="img" />
+                </div>
+                <div class="col-md-4">
+                  <img src="{% static 'creative/img/3.png' %}" alt="img" />
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="{% static 'creative/img/1.png' %}" alt="img" />
+                </div>
+                <div class="col-md-4">
+                  <img src="{% static 'creative/img/2.png' %}" alt="img" />
+                </div>
+                <div class="col-md-4">
+                  <img src="{% static 'creative/img/3.png' %}" alt="img" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--portfolio section end-->
+
+    <!--testimonial section start-->
+    <div
+      class="testimonial-sec padding-top position-relative"
+      id="testimonial-sec"
+    >
+      <div class="right-overlay"></div>
+      <div class="container">
+        <div class="testimonial-area padding-top padding-bottom">
+          <div class="container">
+            <div class="row">
+              <div
+                class="col-12 col-lg-6 d-flex justify-content-center align-items-center text-center text-lg-left"
+              >
+                <div class="testimonial-details wow fadeInLeft">
+                  <h4 class="heading">{% placeholder 'contribute_header' %}</h4>
+                  <p class="text">{% placeholder 'contribute_text' %}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--testimonial section end-->
+
+    <!--Blogs section start-->
+    <section class="blog-sec" id="blog-sec">
+      <div class="left-overlay"></div>
+      <div class="container position-relative">
+        <div class="blog-inner-overlay"></div>
+        <div class="row blog-area">
+          <div
+            class="col-12 col-lg-5 d-flex align-items-center text-center text-lg-left"
+          >
+            <div class="blog-detail wow fadeInLeft">
+              <h4 class="heading">{% placeholder 'blog_header' %}</h4>
+              <p class="text">{% placeholder 'blog_text' %}</p>
+              <a
+                class="btn anim-btn rounded-pill"
+                href="creative/standard-blog.html"
+                >LEARN MORE <span></span><span></span><span></span><span></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 offset-lg-1">
+            <div class="blog-img wow fadeInRight">
+              <img src="{% static 'creative/img/1.png' %}" alt="blog-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Blogs section end-->
+
+    <!--Contact section start-->
+    <section class="contact-sec padding-top padding-bottom" id="contact-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-7">
+            <h4 class="heading text-center text-lg-left">
+              {% placeholder 'touch_header' %}
+            </h4>
+            <form
+              class="row contact-form wow fadeInLeft"
+              id="contact-form-data"
+            >
+              <div class="col-sm-12" id="result"></div>
+              <div class="col-12 col-md-5">
+                <input
+                  type="text"
+                  name="userName"
+                  placeholder="Your Name"
+                  class="form-control"
+                />
+                <input
+                  type="email"
+                  name="userEmail"
+                  placeholder="Email Address *"
+                  class="form-control"
+                />
+                <input
+                  type="text"
+                  name="userSubject"
+                  placeholder="Subject"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-12 col-md-7">
+                <textarea
+                  class="form-control"
+                  name="userMessage"
+                  placeholder="Your Message"
+                  rows="6"
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <a
+                  href="javascript:void(0);"
+                  class="btn purple-btn rounded-pill w-100 contact_btn"
+                  ><i
+                    class="fa fa-spinner fa-spin mr-2 d-none"
+                    aria-hidden="true"
+                  ></i
+                  >Send Message <span></span><span></span><span></span
+                  ><span></span><span></span>
+                </a>
+              </div>
+            </form>
+          </div>
+          <div
+            class="col-12 col-lg-5 text-center text-lg-left position-relative"
+          >
+            <div class="contact-details wow fadeInRight">
+              <h4 class="heading">{% placeholder 'contact_header' %}</h4>
+              <p class="text">{% placeholder 'contact_text' %}</p>
+              <ul>
+                <li>
+                  <i class="las la-phone-volume phone"></i>
+                  <span>+263 000 000 000</span>
+                </li>
+                <li>
+                  <i class="las la-paper-plane email"></i
+                  >email@31julymovement.com
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Contact section end-->
+
+    <!--Footer Start-->
+    {% include 'creative_footer.html' %}
+    <!--Footer End-->
+
+    {% include 'creative_scripts.html' %} {% render_block "js" %}
+  </body>
+</html>
