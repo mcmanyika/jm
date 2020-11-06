@@ -30,11 +30,9 @@ SECRET_KEY = 'z5u_2#s7(hx_7zxv&wdgt*&htwpq63c!7os)1c61j=)x$u15(i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 if DEBUG:
-    ALLOWED_HOSTS = ['127.0.0.1', 'www.freejacob.cf',
-                     'freejacob.cf']
+    ALLOWED_HOSTS = ['127.0.0.1', '161.35.121.24']
 else:
-    ALLOWED_HOSTS = ['www.freejacob.cf',
-                     'freejacob.cf']
+    ALLOWED_HOSTS = ['161.35.121.24']
 
 
 # Application definition
@@ -94,7 +92,6 @@ STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'jm', 'static'),
 )
-# SITE_ID = 1
 SITE_ID = 1
 
 TEMPLATES = [
