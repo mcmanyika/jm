@@ -621,8 +621,8 @@ header .top-social-links li a:hover i {
 
 /*main navigation*/
 header .simple-nav-logo {
-  background-color: #000000;
-  padding: 35px 10px 40px 10px;
+  background-color: #fff;
+  /* padding: 35px 10px 40px 10px; */
   margin-right: 0;
   text-align: center;
   position: relative;
@@ -632,7 +632,7 @@ header .fixed-nav-logo {
   display: none;
 }
 header .navbar-brand img {
-  max-width: 80%;
+  max-width: 50%;
 }
 header .main-navigation {
   padding-top: 30px;
@@ -762,7 +762,7 @@ header
     Side Menu
 ====================================== */
 .side-menu .bg-overlay {
-  background: rgba(247, 28, 82, 0.9);
+  background: #dd1f01;
 }
 .side-menu {
   width: 100%;
@@ -770,8 +770,8 @@ header
   right: 0;
   top: 0;
   bottom: 0;
-  /*background: rgba(247, 28, 82, 0.6);*/
-  background-image: url("../img/side-menu.jpg");
+  background: #dd1f01;
+  /* background-image: url("../img/1.png"); */
   background-size: cover;
   background-position: center;
   z-index: 2032;
@@ -1219,7 +1219,7 @@ header
   align-items: center;
   position: relative;
 }
-.about-sec .services-area .purple-overlay {
+.about-sec .services-area .yellow-overlay {
   position: absolute;
   display: block;
   top: 0;
@@ -1265,7 +1265,6 @@ header
 /*about detail*/
 
 .about-sec .about-area {
-  /*background-color: #2f9301;*/
   background-color: #2f9301;
   padding-left: 50px;
 }
