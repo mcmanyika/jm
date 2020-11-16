@@ -30,11 +30,10 @@ SECRET_KEY = 'z5u_2#s7(hx_7zxv&wdgt*&htwpq63c!7os)1c61j=)x$u15(i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 if DEBUG:
-    ALLOWED_HOSTS = ['127.0.0.1', '161.35.121.24',
+    ALLOWED_HOSTS = ['127.0.0.1',
                      'www.31julymovement.com', '31julymovement.com']
 else:
-    ALLOWED_HOSTS = ['161.35.121.24',
-                     'www.31julymovement.com', '31julymovement.com']
+    ALLOWED_HOSTS = ['www.31julymovement.com', '31julymovement.com']
 
 
 # Application definition
