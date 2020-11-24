@@ -17,7 +17,13 @@
     <meta name="keywords" content=" " />
     <!-- Page Title -->
     <title>{% block title %}31 July Movement{% endblock title %}</title>
-    {% include 'creative_head.html' %} {% render_block "css" %}
+    {% include 'creative_head.html' %} 
+    <style>
+      iframe {
+      height: 300px !important;
+    }
+    </style>
+    {% render_block "css" %}
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -64,45 +70,22 @@
           <div class="col-12 col-lg-6 services-area padding-top padding-bottom">
             <div class="yellow-overlay"></div>
             <div class="row no-gutters wow fadeInLeft">
-              <div class="col-12 col-lg-6 services text-center">
+              <div class="col-12 services text-center">
                 <div class="service-card">
-                  <a href="#aims-section" class="scroll">
-                  <div class="icon-holder">
-                    <i class="lni lni-briefcase"></i>
-                  </div>
-                  <h4 class="card-heading">Aims</h4>
-                </a>
-                </div>
-              </div>
-              <div class="col-12 col-lg-6 services text-center">
-                <div class="service-card">
-                  <a href="#aims-section" class="scroll">
-                  <div class="icon-holder">
-                    <i class="lni lni-bulb"></i>
-                  </div>
-                  <h4 class="card-heading">Principles</h4>
-                </a>
-                </div>
-              </div>
-              <div class="col-12 col-lg-6 services text-center">
-                <div class="service-card">
-                  <a href="#aims-section" class="scroll">
-                  <div class="icon-holder">
-                    <i class="lni lni-heart"></i>
-                  </div>
-                  <h4 class="card-heading">Objectives</h4>
-                </a>
+                  <h4 class="heading">{% placeholder 'about_aim' %}</h4>
+                <p class="text">{% placeholder 'about_aim_text' %}</p>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="col-12 col-lg-6 about-area padding-top padding-bottom text-center text-lg-left"
+            class="col-lg-5 about-area padding-top padding-bottom text-center text-lg-left"
           >
             <div class="about-content wow fadeInRight">
               <div class="about-inner-content">
-                <h4 class="heading">{% placeholder 'about_aim' %}</h4>
-                <p class="text">{% placeholder 'about_aim_text' %}</p>
+                <div class="row">
+                  {% placeholder 'form_section' %}
+                </div>
               </div>
             </div>
           </div>
@@ -125,6 +108,64 @@
       </div>
     </section>
     <!--portfolio section end-->
+    <!--testimonial section start-->
+<div class="testimonial-sec padding-top position-relative" id="testimonial-sec">
+  <div class="right-overlay"></div>
+  <div class="container">
+      <div class="testimonial-area padding-top padding-bottom">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12 col-lg-5 d-flex justify-content-center align-items-center text-center text-lg-left">
+                      <div class="testimonial-details wow fadeInLeft">
+                          <h4 class="heading">Truth <span>  and Justice</span></h4>
+                          <p class="text">
+                              We should never fall into the trap of believing that peace can be
+bought at the price of truth and justice and allowing mass murders to
+keep their ill-gotten gains.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="col-12 col-lg-6 offset-lg-1">
+                     {% placeholder 'video' %}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--testimonial section end-->
+
+
+<!--sponsers section start-->
+<div class="sponser-sec padding-top" id="sponser-sec">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="sponser-tags owl-carousel owl-theme">
+                  <div class="item">
+                      <img src="creative-startup/img/brand4.png">
+                  </div>
+                  <div class="item">
+                      <img src="creative-startup/img/brand4.png">
+                  </div>
+                  <div class="item">
+                      <img src="creative-startup/img/brand4.png">
+                  </div>
+                  <div class="item">
+                      <img src="creative-startup/img/brand4.png">
+                  </div>
+                  <div class="item">
+                      <img src="creative-startup/img/brand4.png">
+                  </div>
+                  <div class="item">
+                      <img src="creative-startup/img/brand4.png">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--sponsers section end-->
 
     <!--Blogs section start-->
     <section class="blog-sec" id="blog-sec">
