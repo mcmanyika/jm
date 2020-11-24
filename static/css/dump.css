@@ -212,3 +212,6 @@ iframe {
   height: 400px;
   vertical-align: bottom;
 }
+.input {
+  font-size: 21px !important;
+}
