@@ -10,6 +10,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
 from blog.views import *
+from libs.views import *
 
 admin.autodiscover()
 
@@ -21,6 +22,9 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     url(r'^secure/', admin.site.urls),  # NOQA
     url(r'/video/', index, name='video'),
+    url(r'/accounts/profile/', dashboard, name='profile'),
+    url(r'/accounts/', include('allauth.urls')),
+    url(r'/libs/', include('libs.urls')),
     url(r'^taggit_autosuggest/', include('taggit_autosuggest.urls')),
 
 
@@ -31,6 +35,9 @@ urlpatterns += i18n_patterns(
 if settings.DEBUG:
     urlpatterns = [
         url(r'/video/', index, name='video'),
+        url(r'/accounts/profile/', dashboard, name='profile'),
+        url(r'/accounts/', include('allauth.urls')),
+        url(r'/libs/', include('libs.urls')),
         url(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
     ] + staticfiles_urlpatterns() + urlpatterns

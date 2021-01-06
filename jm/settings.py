@@ -122,6 +122,14 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+
+    'django.contrib.auth.backends.ModelBackend',
+
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+]
+
 
 MIDDLEWARE = [
     'cms.middleware.utils.ApphookReloadMiddleware',
@@ -179,9 +187,13 @@ INSTALLED_APPS = [
     'djangocms_video',
     'jm',
     'blog',
+    'libs',
 
 
     'cms',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     'aldryn_apphooks_config',
     'aldryn_categories',
