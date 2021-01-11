@@ -10,6 +10,19 @@ User = get_user_model()
 
 
 class UserProfileForm(forms.ModelForm):
+    fname = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control form-control-sm', 'placeholder': 'First Name'}), label='')
+    lname = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Last Name'}), label='')
+    gender = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Gender'}), label='')
+    phone = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Phone'}), label='')
+    country = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control form-control-sm', 'placeholder': 'country'}), label='')
+    province = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Province'}), label='')
+
     class Meta:
         model = UserProfile
         fields = [
