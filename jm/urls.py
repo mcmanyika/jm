@@ -22,8 +22,8 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     url(r'^secure/', admin.site.urls),  # NOQA
     url(r'/video/', index, name='video'),
-    url(r'/accounts/profile/', dashboard, name='profile'),
-    url(r'/accounts/', include('allauth.urls')),
+    url(r'accounts/profile/', dashboard, name='profile'),
+    url(r'accounts/', include('allauth.urls')),
     url(r'/libs/', include('libs.urls')),
     url(r'^taggit_autosuggest/', include('taggit_autosuggest.urls')),
 
@@ -35,8 +35,8 @@ urlpatterns += i18n_patterns(
 if settings.DEBUG:
     urlpatterns = [
         url(r'/video/', index, name='video'),
-        url(r'/accounts/profile/', dashboard, name='profile'),
-        url(r'/accounts/', include('allauth.urls')),
+        url(r'accounts/profile/', dashboard, name='profile'),
+        url(r'accounts/', include('allauth.urls')),
         url(r'/libs/', include('libs.urls')),
         url(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),

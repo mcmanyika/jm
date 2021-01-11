@@ -88,15 +88,7 @@
     <div class="container" style="padding-top: 40px">
       {% block content %}
       <div class="col-md-8">
-        <form method="post" name="form" action="" enctype="multipart/form-data">
-          {% csrf_token %} {{form.fname}} {{form.lname}}<br />
-          {{form.gender}}<br />
-          {{form.phone}} <br />
-          {{form.avatar}} <br />{{form.country}} <br />
-          {{form.province}}<br />
-          <input type="hidden" name="tracker" value="{{ request.user.id }}" />
-          <button type="submit" class="btn btn-danger btn-lg">Save</button>
-        </form>
+       Your profile has been <a href="{% url 'dashboard' %}">updated
       </div>
       {% endblock %}
     </div>

@@ -13,9 +13,19 @@
         <div class="row">
           <div class="col-6">
             <ul class="top-personal-info">
-              <!-- <li>
-                <a href="#"><i class="las la-phone"></i> +263 000 000 000</a>
-              </li> -->
+              {% if request.user.is_authenticated %}
+              <li>
+                <a href="{% url 'profile' %}"
+                  ><i class="las la-user"></i> Dashboard</a
+                >
+              </li>
+              {% else %}
+              <li>
+                <a href="{% url 'account_login' %}"
+                  ><i class="las la-user"></i> Login</a
+                >
+              </li>
+              {%endif %}
               <li>
                 <a href="#"
                   ><i class="las la-envelope"></i> jngarivhume2@gmail.com</a
