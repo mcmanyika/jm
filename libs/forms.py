@@ -18,10 +18,6 @@ class UserProfileForm(forms.ModelForm):
         attrs={'class': 'form-control form-control-sm', 'placeholder': 'Gender'}), label='')
     phone = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
         attrs={'class': 'form-control form-control-sm', 'placeholder': 'Phone'}), label='')
-    country = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
-        attrs={'class': 'form-control form-control-sm', 'placeholder': 'country'}), label='')
-    province = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
-        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Province'}), label='')
 
     class Meta:
         model = UserProfile
@@ -31,9 +27,7 @@ class UserProfileForm(forms.ModelForm):
             'lname',
             'gender',
             'phone',
-            'avatar',
             'country',
-            'province',
         ]
 
 
@@ -52,3 +46,20 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ('username',
                   'email', 'password1', 'password2', )
+
+
+class AddDictForm(forms.ModelForm):
+    header = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Header'}), label='')
+    order = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Order'}), label='')
+
+    class Meta:
+        model = t_dict
+        fields = [
+            'header',
+            'category',
+            'order',
+            'status',
+            'user',
+        ]

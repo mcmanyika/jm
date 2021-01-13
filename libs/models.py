@@ -18,9 +18,7 @@ class UserProfile(models.Model):
     lname = models.CharField(max_length=15, null=True, blank=True)
     gender = models.CharField(max_length=10, null=True, blank=True)
     phone = models.CharField(max_length=25, default='', null=True, blank=True)
-    avatar = models.ImageField(null=True, blank=True)
     country = models.CharField(max_length=20, null=True, blank=True)
-    province = models.CharField(max_length=20, null=True, blank=True)
     status = models.CharField(max_length=10, null=True, blank=True)
     user = models.IntegerField(default=1, null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -31,8 +29,13 @@ class UserProfile(models.Model):
 
 
 class t_dict(models.Model):
+    category = (
+        ('Country', 'Country'),
+        ('Header', 'Header')
+    )
     header = models.CharField(max_length=50, default='')
-    category = models.CharField(max_length=20, default='')
+    category = models.CharField(choices=category, max_length=20, default='')
+    order = models.CharField(max_length=20, default='1')
     status = models.CharField(max_length=20, default='')
     user = models.IntegerField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)

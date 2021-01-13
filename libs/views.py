@@ -23,6 +23,7 @@ from .models import *
 # Create your views here.
 
 def dashboard(request):
+    dictionary = t_dict.objects.all().order_by('id')
     instance = get_object_or_404(UserProfile, tracker=request.user.id)
 
     form = UserProfileForm(request.POST or None,
@@ -35,6 +36,8 @@ def dashboard(request):
 
     context = {
         'form': form,
+        'country': instance.country,
+        'dictionary': dictionary,
     }
 
     template = "libs/dashboard.html"
@@ -73,6 +76,7 @@ def register(request):
 
 
 def user_profile(request):
+    dictionary = t_dict.objects.all().order_by('id')
     form = UserProfileForm(request.POST or None,
                            request.FILES or None)
     if form.is_valid():
@@ -82,10 +86,28 @@ def user_profile(request):
         return HttpResponseRedirect('/accounts/profile/')
 
     context = {
+        'dictionary': dictionary,
         'form': form,
     }
 
     template = "libs/user_profile.html"
+
+    return render(request, template, context)
+
+
+def add_dict(request):
+    form = AddDictForm(request.POST or None,
+                       request.FILES or None)
+    if form.is_valid():
+        f = form.save(commit=False)
+        f.save()
+        messages.success(request, "Saved")
+
+    context = {
+        'form': form,
+    }
+
+    template = "libs/add_dict.html"
 
     return render(request, template, context)
 
