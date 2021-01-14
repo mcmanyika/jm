@@ -96,6 +96,7 @@
             {% for rw in dictionary %}
             {% if rw.category == 'Country' %}
             <option value="{{rw.header}}">{{rw.header}}</option>
+            {% endif %}
             {% endfor %}
           </select>
           <input type="hidden" name="tracker" value="{{ request.user.id }}" />
