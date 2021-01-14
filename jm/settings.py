@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z5u_2#s7(hx_7zxv&wdgt*&htwpq63c!7os)1c61j=)x$u15(i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 if DEBUG:
     ALLOWED_HOSTS = ['127.0.0.1',
                      'www.31julymovement.com', '31julymovement.com']
@@ -257,30 +257,40 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bigboy',
+        'USER': 'db_admin',
+        'PASSWORD': 'focus@1',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'CONN_MAX_AGE': 0,
-            'ENGINE': 'django.db.backends.sqlite3',
-            'HOST': 'localhost',
-            'NAME': 'project.db',
-            'PASSWORD': '',
-            'PORT': '',
-            'USER': ''
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'bigboy',
-            'USER': 'db_admin',
-            'PASSWORD': 'focus@1',
-            'HOST': 'localhost',
-            'PORT': '',
-        }
-    }
+# if DEBUG:
+#     DATABASES = {
+#         'default': {
+#             'CONN_MAX_AGE': 0,
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'HOST': 'localhost',
+#             'NAME': 'project.db',
+#             'PASSWORD': '',
+#             'PORT': '',
+#             'USER': ''
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'bigboy',
+#             'USER': 'db_admin',
+#             'PASSWORD': 'focus@1',
+#             'HOST': 'localhost',
+#             'PORT': '',
+#         }
+#     }
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
