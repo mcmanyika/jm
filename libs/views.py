@@ -83,7 +83,7 @@ def user_profile(request):
         f = form.save(commit=False)
         f.save()
         messages.success(request, "Saved")
-        return HttpResponseRedirect('/accounts/profile/')
+        return HttpResponseRedirect('/libs/register-confirmation/')
 
     context = {
         'dictionary': dictionary,
@@ -91,6 +91,17 @@ def user_profile(request):
     }
 
     template = "libs/user_profile.html"
+
+    return render(request, template, context)
+
+
+def register_confirmation(request):
+
+    context = {
+
+    }
+
+    template = "libs/register_confirmation.html"
 
     return render(request, template, context)
 
