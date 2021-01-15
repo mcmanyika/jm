@@ -92,13 +92,14 @@
           {% csrf_token %} {{form.fname}} {{form.lname}}<br />
           {{form.gender}}<br />
           {{form.phone}} <br />
-          <select name="country">
+          {{form.country}}<br />
+          <!-- <select name="country">
             {% for rw in dictionary %}
             {% if rw.category == 'Country' %}
             <option value="{{rw.header}}">{{rw.header}}</option>
             {% endif %}
             {% endfor %}
-          </select>
+          </select> -->
           <input type="hidden" name="tracker" value="{{ request.user.id }}" />
           <button type="submit" class="btn btn-danger btn-lg">Save</button>
         </form>
