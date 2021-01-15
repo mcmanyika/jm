@@ -18,6 +18,8 @@ class UserProfileForm(forms.ModelForm):
         attrs={'class': 'form-control form-control-sm', 'placeholder': 'Gender'}), label='')
     phone = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
         attrs={'class': 'form-control form-control-sm', 'placeholder': 'Phone'}), label='')
+    country = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Country'}), label='')
 
     class Meta:
         model = UserProfile
