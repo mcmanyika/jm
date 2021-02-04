@@ -7,9 +7,9 @@
     </div>
 
     <div class="col-md-12" style="padding-top: 20px">
-      Account <br />
+      <h3>Accounts</h3> <br />
         {% for rw in accts %}
-         {{ rw.id }} {{ rw.fname }} {{ rw.lname }}<br />
+         {{ rw.id }} {{ rw.fname }} {{ rw.lname }} {{ rw.gender }} {{ rw.phone }} {{ rw.country }}<br />
         {% endfor %}
     </div>
   </div>
