@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^register-confirmation/$', register_confirmation,
         name='register-confirmation'),
     url(r'^add-dict/$', add_dict, name='add-dict'),
-    url(r'/accts/$', accts, name='accts'),
+    url(r'^/accts/$', accts, name='accts'),
     url(r'^', dashboard, name='dashboard'),
 
 
