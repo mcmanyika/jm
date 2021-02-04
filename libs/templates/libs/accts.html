@@ -8,9 +8,30 @@
 
     <div class="col-md-12" style="padding-top: 20px">
       <h3>Accounts</h3> <br />
+      <table class="table table-striped">
+      <thead>
         {% for rw in accts %}
-         {{ rw.id }} {{ rw.fname }} {{ rw.lname }} {{ rw.gender }} {{ rw.phone }} {{ rw.country }}<br />
+        <tr>
+          <td>
+          {{ rw.id }} 
+          </td>
+          <td>
+            {{ rw.fname }} {{ rw.lname }} 
+         </td>
+          <td>
+          {{ rw.gender }} 
+      </td>
+          <td>
+          {{ rw.phone }} 
+        </td>
+          <td>
+          {{ rw.country }}
+        </td>
+       </td>
         {% endfor %}
+      </tr>
+    </thead>
+  </table>
     </div>
   </div>
 
