@@ -123,8 +123,9 @@ def add_dict(request):
     return render(request, template, context)
 
 def accts(request):
-    
+
     accts = UserProfile.objects.all().order_by('-id')
+    
 
     context = {
         'accts' : accts,
