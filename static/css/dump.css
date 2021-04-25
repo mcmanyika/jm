@@ -212,6 +212,12 @@ iframe {
   height: 400px;
   vertical-align: bottom;
 }
-.input {
-  font-size: 21px !important;
+
+.topLinks {
+  padding-top: 0;
+  color: #000000;
+  font-family: Oswald, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.5s ease;
 }

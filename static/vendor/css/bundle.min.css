@@ -9395,6 +9395,7 @@ button.bg-dark:hover {
   bottom: 0;
   left: 0;
   width: 100%;
+  min-height: 400px;
   height: 100%;
   border: 0;
 }
