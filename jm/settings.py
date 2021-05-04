@@ -248,7 +248,7 @@ if DEBUG:
             'CONN_MAX_AGE': 0,
             'ENGINE': 'django.db.backends.sqlite3',
             'HOST': 'localhost',
-            'NAME': 'project.db',
+            'NAME': 'sqlite3.db',
             'PASSWORD': '',
             'PORT': '',
             'USER': ''
@@ -274,12 +274,7 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
-META_SITE_PROTOCOL = 'https'  # set 'http' for non ssl enabled websites
-META_USE_SITES = True
-META_USE_OG_PROPERTIES=True
-META_USE_TWITTER_PROPERTIES=True
-META_USE_GOOGLEPLUS_PROPERTIES=True # django-meta 1.x+
-META_USE_SCHEMAORG_PROPERTIES=True  # django-meta 2.x+
+
 
 BLOG_AVAILABLE_PERMALINK_STYLES = (
     ('full_date', ('Full date')),
@@ -292,3 +287,9 @@ BLOG_PERMALINK_URLS = {
     'category': r'^(?P<category>\w[-\w]*)/(?P<slug>\w[-\w]*)/$',
 }
 
+META_SITE_PROTOCOL = 'https'  # set 'http' for non ssl enabled websites
+META_USE_SITES = True
+META_USE_OG_PROPERTIES=True
+META_USE_TWITTER_PROPERTIES=True
+META_USE_GOOGLEPLUS_PROPERTIES=True # django-meta 1.x+
+META_USE_SCHEMAORG_PROPERTIES=True  # django-meta 2.x+
