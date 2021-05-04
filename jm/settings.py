@@ -257,7 +257,7 @@ if DEBUG:
             'CONN_MAX_AGE': 0,
             'ENGINE': 'django.db.backends.sqlite3',
             'HOST': 'localhost',
-            'NAME': 'project.db',
+            'NAME': 'sqlite3.db',
             'PASSWORD': '',
             'PORT': '',
             'USER': ''
