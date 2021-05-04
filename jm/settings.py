@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '=!hb5zko_39=1(&24az&9e@x^_t-0$%o=gcv(y40yhvbx-4w#m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 if DEBUG:
     ALLOWED_HOSTS = ['127.0.0.1',
                      'www.31julymovement.com', '31julymovement.com']
