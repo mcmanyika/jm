@@ -188,6 +188,29 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
+    'parler',
+    'taggit',
+    'taggit_autosuggest',
+    'meta',
+    'sortedm2m',
+    'djangocms_blog',
+    'aldryn_search',
+
+    'aldryn_apphooks_config',
+    # 'aldryn_categories',
+    'aldryn_common',
+    # 'aldryn_newsblog',
+    # 'aldryn_people',
+    # 'aldryn_translation_tools',
+
+    'absolute',
+    'aldryn_forms',
+    'aldryn_forms.contrib.email_notifications',
+    # 'captcha',
+    # 'emailit',
+
+    'aldryn_boilerplates',
 ]
 
 LANGUAGES = (
@@ -258,3 +281,21 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+BLOG_AVAILABLE_PERMALINK_STYLES = (
+    ('full_date', ('Full date')),
+    ('short_date', ('Year /  Month')),
+    ('category', ('Category')),
+)
+BLOG_PERMALINK_URLS = {
+    'full_date': r'^(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<day>\d{1,2})/(?P<slug>\w[-\w]*)/$',
+    'short_date': r'^(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<slug>\w[-\w]*)/$',
+    'category': r'^(?P<category>\w[-\w]*)/(?P<slug>\w[-\w]*)/$',
+}
+
+META_SITE_PROTOCOL = 'http'
+META_USE_SITES = True
+
+META_USE_OG_PROPERTIES = True
+META_USE_TWITTER_PROPERTIES = True
+META_USE_GOOGLEPLUS_PROPERTIES = True
