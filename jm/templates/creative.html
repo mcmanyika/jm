@@ -27,6 +27,14 @@
 }
     </style>
     {% render_block "css" %}
+    {{ ALDRNYN_SNAKE.render_head }}
+    {% if request.toolbar %}
+    <style>
+      .cms-toolbar-expanded .navbar-custom {
+        margin-top: 100px;
+      }
+    </style>
+    {% endif %}
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
