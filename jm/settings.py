@@ -189,17 +189,27 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-    'aldryn_apphooks_config',
     'parler',
     'taggit',
     'taggit_autosuggest',
     'meta',
     'sortedm2m',
     'djangocms_blog',
+    'aldryn_search',
 
+    'aldryn_apphooks_config',
+    # 'aldryn_categories',
+    'aldryn_common',
+    # 'aldryn_newsblog',
+    # 'aldryn_people',
+    # 'aldryn_translation_tools',
+
+    'absolute',
+    'aldryn_forms',
+    'aldryn_forms.contrib.email_notifications',
     
 
-   
+    'aldryn_boilerplates',
 ]
 
 LANGUAGES = (
@@ -224,8 +234,6 @@ CMS_LANGUAGES = {
         'hide_untranslated': False,
     },
 }
-
-
 
 CMS_TEMPLATES = (
     ## Customize this
@@ -266,15 +274,12 @@ else:
         }
     }
 
-
-
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters',
+    'easy_thumbnails.processors.filters'
 )
-
 
 BLOG_AVAILABLE_PERMALINK_STYLES = (
     ('full_date', ('Full date')),
@@ -287,9 +292,9 @@ BLOG_PERMALINK_URLS = {
     'category': r'^(?P<category>\w[-\w]*)/(?P<slug>\w[-\w]*)/$',
 }
 
-META_SITE_PROTOCOL = 'https'  # set 'http' for non ssl enabled websites
+META_SITE_PROTOCOL = 'http'
 META_USE_SITES = True
-META_USE_OG_PROPERTIES=True
-META_USE_TWITTER_PROPERTIES=True
-META_USE_GOOGLEPLUS_PROPERTIES=True # django-meta 1.x+
-META_USE_SCHEMAORG_PROPERTIES=True  # django-meta 2.x+
+
+META_USE_OG_PROPERTIES = True
+META_USE_TWITTER_PROPERTIES = True
+META_USE_GOOGLEPLUS_PROPERTIES = True
