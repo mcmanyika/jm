@@ -192,7 +192,7 @@ INSTALLED_APPS = [
     'aldryn_common',
     # 'aldryn_newsblog',
     # 'aldryn_people',
-    # 'aldryn_translation_tools',
+    'aldryn_translation_tools',
 
     'absolute',
     'aldryn_forms',
@@ -272,6 +272,8 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 
+
+
 BLOG_AVAILABLE_PERMALINK_STYLES = (
     ('full_date', ('Full date')),
     ('short_date', ('Year /  Month')),
@@ -283,9 +285,10 @@ BLOG_PERMALINK_URLS = {
     'category': r'^(?P<category>\w[-\w]*)/(?P<slug>\w[-\w]*)/$',
 }
 
-META_SITE_PROTOCOL = 'http'
+META_SITE_PROTOCOL = 'https'
 META_USE_SITES = True
 
-META_USE_OG_PROPERTIES = True
-META_USE_TWITTER_PROPERTIES = True
-META_USE_GOOGLEPLUS_PROPERTIES = True
+META_USE_OG_PROPERTIES=True
+META_USE_TWITTER_PROPERTIES=True
+META_USE_GOOGLEPLUS_PROPERTIES=True # django-meta 1.x+
+META_USE_SCHEMAORG_PROPERTIES=True  # django-meta 2.x+
