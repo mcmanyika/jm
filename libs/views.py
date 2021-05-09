@@ -136,7 +136,7 @@ def accts(request):
     #                         FROM auth_User  au
     #                         INNER JOIN libs_UserProfile u ON u.id =  au.id """)
     
-    accts = auth.User.objects.all()
+    accts = User.objects.all()
    
     context = {
         'accts' : accts,
