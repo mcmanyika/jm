@@ -131,17 +131,19 @@ def add_dict(request):
 
 def accts(request):
 
-    accts = UserProfile.objects.raw("""Select 
-                            u.id, u.fname, u.lname, u.gender, u.phone, u.country, au.email
-                            FROM auth_User  au
-                            INNER JOIN libs_UserProfile u ON u.id =  au.id """)
+    # accts = UserProfile.objects.raw("""Select 
+    #                         u.id, u.fname, u.lname, u.gender, u.phone, u.country, au.email
+    #                         FROM auth_User  au
+    #                         INNER JOIN libs_UserProfile u ON u.id =  au.id """)
+    
+    accts = auth.User.objects.all()
    
     context = {
         'accts' : accts,
 
     }
 
-    template = "libs/accts.html"
+    template = "libs/members.html"
 
     return render(request, template, context)
 
