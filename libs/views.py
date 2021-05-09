@@ -21,6 +21,13 @@ from .models import *
 
 
 # Create your views here.
+def dictfetchall(cursor):
+    "Return all rows from a cursor as a dict"
+    columns = [col[0] for col in cursor.description]
+    return [
+        dict(zip(columns, row))
+        for row in cursor.fetchall()
+    ]
 
 def dashboard(request):
     dictionary = t_dict.objects.all().order_by('id')
@@ -124,9 +131,11 @@ def add_dict(request):
 
 def accts(request):
 
-    accts = UserProfile.objects.all().order_by('-id')
-    
-
+    accts = UserProfile.objects.raw("""Select 
+                            u.id, u.fname, u.lname, u.gender, u.phone, u.country, au.email
+                            FROM auth_User  au
+                            INNER JOIN libs_UserProfile u ON u.id =  au.id """)
+   
     context = {
         'accts' : accts,
 
