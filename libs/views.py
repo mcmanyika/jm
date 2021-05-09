@@ -70,9 +70,9 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return HttpResponseRedirect('/libs/user-profile/')
+            # user = authenticate(username=username, password=raw_password)
+            # login(request, user)
+            return HttpResponseRedirect('/libs/register-confirmation/')
     else:
         form = SignUpForm()
 

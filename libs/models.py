@@ -13,7 +13,7 @@ def upload_location(instance, filename):
 
 
 class UserProfile(models.Model):
-    tracker = models.ForeignKey(User, on_delete=models.CASCADE, default='1')
+    tracker = models.IntegerField(default='')
     fname = models.CharField(max_length=15, null=True, blank=True)
     lname = models.CharField(max_length=15, null=True, blank=True)
     gender = models.CharField(max_length=10, null=True, blank=True)
