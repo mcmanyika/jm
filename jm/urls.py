@@ -20,7 +20,7 @@ urlpatterns += i18n_patterns(
     path("accounts/", include('allauth.urls')),
     path("libs/", include('libs.urls')),
     path("admin/", admin.site.urls), 
-    path("taggit_autosuggest/", include('taggit_autosuggest.urls')),
+    # path("taggit_autosuggest/", include('taggit_autosuggest.urls')),
     path("", include("cms.urls")))
 
 # This is only needed when using runserver.
