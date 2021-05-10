@@ -247,12 +247,12 @@ if DEBUG:
     DATABASES = {
         'default': {
             'CONN_MAX_AGE': 0,
-            'ENGINE': 'django.db.backends.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'HOST': 'localhost',
-            'NAME': 'sqlite3.db',
-            'PASSWORD': '',
+            'NAME': 'bigboy',
+            'PASSWORD': 'focus@1',
             'PORT': '',
-            'USER': ''
+            'USER': 'db_admin'
         }
     }
 else:
