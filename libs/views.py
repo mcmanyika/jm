@@ -129,6 +129,7 @@ def add_dict(request):
 
     return render(request, template, context)
 
+@login_required(login_url='/')
 def accts(request):
 
     # accts = UserProfile.objects.raw("""Select 
