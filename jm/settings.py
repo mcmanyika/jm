@@ -246,10 +246,10 @@ CMS_PLACEHOLDER_CONF = {}
 if DEBUG:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'bigboy',
-            'USER': 'db_admin',
-            'PASSWORD': 'focus@1',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'project.db',
+            'USER': '',
+            'PASSWORD': '',
             'HOST': 'localhost',
             'PORT': '',
         }
