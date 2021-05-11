@@ -51,7 +51,7 @@ django-taggit-autosuggest==0.3.8
 django-taggit-templatetags==0.2.5
 django-templatetag-sugar==1.0
 django-tinymce==3.3.0
-django-treebeard==4.5.1
+django-treebeard>=4.0,!=4.5.1
 djangocms-admin-style==2.0.2
 djangocms-apphook-setup==0.4.1
 djangocms-attributes-field==2.0.0
