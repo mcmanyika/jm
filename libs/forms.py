@@ -36,7 +36,9 @@ class UserProfileForm(forms.ModelForm):
 class SignUpForm(UserCreationForm):
     username = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
         attrs={'class': 'form-control form-control-sm', 'placeholder': 'Username'}), label='')
-
+    first_name = forms.CharField(max_length=30, required=False, widget = forms.TextInput(attrs={'class' : 'form-control form-control-sm','placeholder':'First Name'}), label='')
+    last_name = forms.CharField(max_length=30, required=False, widget = forms.TextInput(attrs={'class' : 'form-control form-control-sm','placeholder':'Last Name'}), label='')
+    
     email = forms.EmailField(max_length=254, required=False,  widget=forms.TextInput(
         attrs={'class': 'form-control form-control-sm', 'placeholder': 'Email'}), label='')
     password1 = forms.CharField(widget=forms.PasswordInput(
@@ -46,7 +48,7 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username',
+        fields = ('username','first_name', 'last_name',
                   'email', 'password1', 'password2', )
 
 
@@ -65,3 +67,11 @@ class AddDictForm(forms.ModelForm):
             'status',
             'user',
         ]
+
+class PhotoForm(forms.ModelForm):
+    class Meta:
+        model = Gallery
+        fields = ['title',
+                  'description',
+                  'image',
+                  ]  

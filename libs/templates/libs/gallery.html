@@ -1,0 +1,48 @@
+{% extends "creative_standalone_base.html" %} 
+{% load cms_tags menu_tags sekizai_tags static %}
+{% block content %}
+<!--portfolio section start-->
+<section class="portfolio-sec company-portfolio-section padding-top" id="portfolio-section">
+    <div class="container">
+        <div class="section-heading">
+            <div class="row">
+                <div class="col-md-12">
+                    {% for rw in photos %}
+                    <div id="js-grid-mosaic" class="cbp cbp-l-grid-mosaic col-lg-6">
+                        <div class="cbp-item web logo">
+                            <a href="{% static 'img/c1.jpeg' %}" class="cbp-caption cbp-lightbox" data-title="31JulyMovement">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="{% static '/img/' %}{{rw.image}}" alt="img">
+                                </div>
+                                <div class="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
+                                    <div class="portfolio-inner-content">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="hover-text">
+                                        <h4 class="p-hover-title">31JulyMovement</h4>
+                                        <p class="p-hover-des">Mbare Clean Up</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <form  method="post"  action="" enctype="multipart/form-data">{% csrf_token %}
+            
+            <p class="pad">
+                {{form}}
+            </p>
+         <p style="padding-top:10px">
+            <button type="submit" class="btn btn-danger btn-lg">Save</button>
+             <button type="reset" class="btn btn-warning btn-lg">Clear</button>
+        </p>
+        </form>
+    </div>
+</section>
+<!--portfolio section end-->
+{% endblock %}

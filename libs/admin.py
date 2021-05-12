@@ -4,4 +4,5 @@ from .models import *
 # Register your models here.
 
 admin.site.register(UserProfile)
+admin.site.register(Gallery)
 admin.site.register(t_dict)

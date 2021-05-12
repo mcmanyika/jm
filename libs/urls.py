@@ -11,6 +11,7 @@ urlpatterns = [
         name='register-confirmation'),
     url(r'^add-dict/$', add_dict, name='add-dict'),
     url(r'^accts/$', accts, name='accts'),
+    url(r'gallery/', gallery, name='gallery'),
     url(r'^', dashboard, name='dashboard'),
 
 

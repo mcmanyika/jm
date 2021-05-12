@@ -51,6 +51,26 @@ def dashboard(request):
 
     return render(request, template, context)
 
+def gallery(request):
+    photos = Gallery.objects.all().order_by('-id')
+
+    form = PhotoForm(request.POST or None,
+                           request.FILES or None)
+    if form.is_valid():
+        f = form.save(commit=False)
+        f.save()
+        messages.success(request, "Saved")
+        return HttpResponseRedirect('/libs/register-confirmation/')
+
+    context = {
+        'photos': photos,
+        'form': form,
+    }
+
+    template = "libs/gallery.html"
+
+    return render(request, template, context)
+
 
 def update_confirmation(request):
 

@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 from django.conf import settings
 from django.db import models
+from imagekit.models import ImageSpecField
+from pilkit.processors import ResizeToFill
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django import forms
@@ -43,3 +45,15 @@ class t_dict(models.Model):
 
     def __unicode__(self):
         return 't_dict {}'.format(self.id)
+
+class Gallery(models.Model):
+	title = models.CharField(max_length=50, default='')
+	description = models.CharField(max_length=35, default='')
+	image = models.ImageField(default='', blank=True)
+	# image_thumbnail = ImageSpecField(source='image',
+	# 	processors=[ResizeToFill(350, 200)],
+	# 	format='JPEG',
+	# 	options={'quality': 60})
+
+	def __str__(self):
+		return self.title
