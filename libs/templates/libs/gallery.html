@@ -10,7 +10,7 @@
                     {% for rw in photos %}
                     <div id="js-grid-mosaic" class="cbp cbp-l-grid-mosaic col-lg-6">
                         <div class="cbp-item web logo">
-                            <a href="{% static 'img/c1.jpeg' %}" class="cbp-caption cbp-lightbox" data-title="31JulyMovement">
+                            <a href="/media/{{rw.image}}" class="cbp-caption cbp-lightbox" data-title="31JulyMovement">
                                 <div class="cbp-caption-defaultWrap">
                                     <img src="/media/{{rw.image}}" alt="img">
                                 </div>
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <form  method="post"  action="" enctype="multipart/form-data">{% csrf_token %}
+        <form  method="post"   action="" enctype="multipart/form-data">{% csrf_token %}
             
             <p class="pad">
                 {{form}}
