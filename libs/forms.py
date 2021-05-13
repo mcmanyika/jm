@@ -53,15 +53,12 @@ class SignUpForm(UserCreationForm):
 class AddDictForm(forms.ModelForm):
     header = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
         attrs={'class': 'form-control form-control-sm', 'placeholder': 'Header'}), label='')
-    order = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
-        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Order'}), label='')
-
+    
     class Meta:
         model = t_dict
         fields = [
             'header',
             'category',
-            'order',
             'status',
             'user',
         ]
@@ -73,3 +70,32 @@ class PhotoForm(forms.ModelForm):
                   'description',
                   'image',
                   ]  
+
+
+class ServiceProvidersForm(forms.ModelForm):
+    name = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+    attrs={'class': 'form-control form-control-sm', 'placeholder': 'Company Name'}), label='')
+    description = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+    attrs={'class': 'form-control form-control-sm', 'placeholder': 'Type of Service'}), label='')
+    address = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+    attrs={'class': 'form-control form-control-sm', 'placeholder': 'Address'}), label='')
+    phone = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+    attrs={'class': 'form-control form-control-sm', 'placeholder': 'Phone'}), label='')
+    email = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+    attrs={'class': 'form-control form-control-sm', 'placeholder': 'Email'}), label='')
+    website = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+    attrs={'class': 'form-control form-control-sm', 'placeholder': 'Website'}), label='')
+    contact = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+    attrs={'class': 'form-control form-control-sm', 'placeholder': 'Contact Person'}), label='')
+    class Meta:
+        model = t_service_providers
+        fields = [
+            'name',
+            'description',
+            'address',
+            'phone',
+            'email',
+            'website',
+            'contact',
+            'user',
+        ]

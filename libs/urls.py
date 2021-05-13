@@ -12,6 +12,8 @@ urlpatterns = [
     url(r'^add-dict/$', add_dict, name='add-dict'),
     url(r'^accts/$', accts, name='accts'),
     url(r'gallery/', gallery, name='gallery'),
+    url(r'service-providers/', ServiceProviders, name='Service-Providers'),
+    url(r'dash/', dash, name='dash'),
     url(r'^', dashboard, name='dashboard'),
 
 

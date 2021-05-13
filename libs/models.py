@@ -33,7 +33,8 @@ class UserProfile(models.Model):
 class t_dict(models.Model):
     category = (
         ('Country', 'Country'),
-        ('Header', 'Header')
+        ('Header', 'Header'),
+        ('Service Provider', 'Service Provider')
     )
     header = models.CharField(max_length=50, default='')
     category = models.CharField(choices=category, max_length=20, default='')
@@ -53,3 +54,18 @@ class Gallery(models.Model):
     
 	def __str__(self):
 		return self.title
+
+class t_service_providers(models.Model):
+    name = models.CharField(max_length=50, default='')
+    description = models.CharField(max_length=35, default='')
+    address = models.CharField(max_length=35, default='')
+    phone = models.CharField(max_length=15, default='')
+    email = models.EmailField()
+    contact = models.CharField(max_length=35, default='')
+    website = models.CharField(max_length=35, default='')
+    user = models.IntegerField(default=1, null=True, blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    
+    def __str__(self):
+        return self.name

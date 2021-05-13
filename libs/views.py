@@ -152,11 +152,6 @@ def add_dict(request):
 @login_required(login_url='/')
 def accts(request):
 
-    # accts = UserProfile.objects.raw("""Select 
-    #                         u.id, u.fname, u.lname, u.gender, u.phone, u.country, au.email
-    #                         FROM auth_User  au
-    #                         INNER JOIN libs_UserProfile u ON u.id =  au.id """)
-    
     accts = User.objects.all()
    
     context = {
@@ -167,6 +162,39 @@ def accts(request):
     template = "libs/members.html"
 
     return render(request, template, context)
+
+def ServiceProviders(request):
+    dictionary = t_dict.objects.all().order_by('id')
+    form = ServiceProvidersForm(request.POST or None,
+                           request.FILES or None)
+    if form.is_valid():
+        f = form.save(commit=False)
+        f.save()
+        messages.success(request, "Saved")
+        return HttpResponseRedirect('/libs/register-confirmation/')
+
+    context = {
+        'dictionary': dictionary,
+        'form': form,
+    }
+
+    template = "libs/service_providers.html"
+
+    return render(request, template, context)
+
+def dash(request):
+    dictionary = t_dict.objects.all().order_by('id')
+
+
+    context = {
+        'dictionary': dictionary,
+    }
+
+    template = "libs/dash.html"
+
+    return render(request, template, context)
+    
+
 
 
 def Logout(request):

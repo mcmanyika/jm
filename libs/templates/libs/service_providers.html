@@ -1,0 +1,31 @@
+{% extends "libs/dashboard.html" %} {% load static %} 
+{% block content %}
+<div class="col-lg-12">
+  <div class="auth-form-transparent text-left p-4">
+    <div class="col-md-12" style="padding-top: 20px">
+      <form method="post">{% csrf_token %} 
+        {{form.name}}<br />
+        <select name="description" class="form-control">
+            {% for rw in dictionary %}
+                {% if rw.category == 'Service Provider' %}
+                    <option value="{{rw.header}}">{{rw.header}}</option>
+                {% endif %}
+            {% endfor %}
+        </select> <br />
+        {{form.address}}<br />
+        {{form.phone}}<br />
+        {{form.email}}<br />
+        {{form.website}}<br />
+        {{form.contact}}<br />
+
+        <input type="hidden" name="user" value="{{ request.user.id }}" />
+        <center>
+          <button type="submit" class="btn btn-danger btn-lg">Save</button>
+        </center>
+      </form>
+      <hr />
+    </div>
+  </div>
+
+  {% endblock %}
+</div>
