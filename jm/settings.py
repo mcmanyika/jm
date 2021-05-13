@@ -21,7 +21,7 @@ if DEBUG:
     ALLOWED_HOSTS = ['127.0.0.1',
                      'www.31julymovement.com', '31julymovement.com']
 else:
-    ALLOWED_HOSTS = ['www.31julymovement.com', '31julymovement.com']
+    ALLOWED_HOSTS = ['159.65.163.6','www.31julymovement.com', '31julymovement.com']
 
 
 # Application definition
