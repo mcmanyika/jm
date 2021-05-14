@@ -15,7 +15,7 @@
             <ul class="top-personal-info">
               {% if request.user.is_authenticated %}
               <li>
-                <a href="{% url 'profile' %}"
+                <a href="{% url 'myProfile' %}"
                   ><i class="las la-user"></i> Dashboard</a
                 >
               </li>
@@ -74,10 +74,10 @@
                     <a class="nav-link  scroll" href="/">HOME</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link scroll" href="#about-sec">ABOUT</a>
+                    <a class="nav-link" href="/articles/">ARTICLES</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link scroll" href="#portfolio-section">GALLERY</a>
+                    <a class="nav-link"  href="/#portfolio-section">GALLERY</a>
                   </li>
                   <li class="nav-item">
                     <a
@@ -130,10 +130,10 @@
                   <a class="nav-link" href="/">HOME</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link scroll" href="#about-sec">ABOUT</a>
+                  <a class="nav-link" href="/articles/">ARTICLES</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link"  href="#portfolio-section">GALLERY</a>
+                  <a class="nav-link"  href="/#portfolio-section">GALLERY</a>
                 </li>
                 <li class="nav-item">
                   <a

@@ -4,37 +4,28 @@
   <head>
     <!-- Meta Tags -->
     <meta charset="utf-8" />
-    <link rel="icon" href="../static/creative/img/logo.png" />
+    <link rel="icon" href="{% static '/creative/img/logo.png' %}" />
     <meta
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
       name="viewport"
     />
     <!-- Author -->
     <meta name="author" content="31 July Movement" />
-    <!-- description -->
-    <meta name="description" content="" />
-    <!-- keywords -->
-    <meta name="keywords" content=" " />
+    <meta
+    name="description"
+    content="We are an apolitical resistance movement bringing Zimbabweans together; whether opposition or ruling party, black or white, young or old"
+  />
+  <!-- keywords -->
+  <meta
+    name="keywords"
+    content=" 31julymovement, democracy, zimbabwe, movement, jacob, ngarivhume, human rights, harare"
+  />
     <!-- Page Title -->
     <title>{% block title %}31 July Movement{% endblock title %}</title>
     {% include 'creative_head.html' %} 
-    <style>
-      #video iframe {
-      height: 300px !important;
-    }
-    input {
-  font-size: 21px !important;
-}
-    </style>
+    
     {% render_block "css" %}
-    <!-- {{ ALDRNYN_SNAKE.render_head }} -->
-    {% if request.toolbar %}
-    <style>
-      .cms-toolbar-expanded .navbar-custom {
-        margin-top: 100px;
-      }
-    </style>
-    {% endif %}
+  
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
