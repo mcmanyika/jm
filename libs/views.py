@@ -29,7 +29,68 @@ def dictfetchall(cursor):
         for row in cursor.fetchall()
     ]
 
-def dashboard(request):
+@login_required(login_url='/')
+def dash(request):
+    dictionary = t_dict.objects.all().order_by('id')
+    form = UserProfileForm(request.POST or None,
+                           request.FILES or None)
+    if form.is_valid():
+        f = form.save(commit=False)
+        f.save()
+        messages.success(request, "Saved")
+        return HttpResponseRedirect('/libs/register-confirmation/')
+
+    context = {
+        'dictionary': dictionary,
+        'form': form,
+    }
+
+    template = "libs/dash.html"
+
+    return render(request, template, context)
+
+@login_required(login_url='/')
+def user_profile(request):
+    dictionary = t_dict.objects.all().order_by('id')
+    form = UserProfileForm(request.POST or None,
+                           request.FILES or None)
+    if form.is_valid():
+        f = form.save(commit=False)
+        f.save()
+        messages.success(request, "Saved")
+        return HttpResponseRedirect('/libs/register-confirmation/')
+
+    context = {
+        'dictionary': dictionary,
+        'form': form,
+    }
+
+    template = "libs/user_profile.html"
+
+    return render(request, template, context)
+
+@login_required(login_url='/')
+def add_profile(request):
+    dictionary = t_dict.objects.all().order_by('id')
+    form = AddProfileForm(request.POST or None,
+                           request.FILES or None)
+    if form.is_valid():
+        f = form.save(commit=False)
+        f.save()
+        messages.success(request, "Saved")
+        return HttpResponseRedirect('/libs/register-confirmation/')
+
+    context = {
+        'dictionary': dictionary,
+        'form': form,
+    }
+
+    template = "libs/add_profile.html"
+
+    return render(request, template, context)
+
+@login_required(login_url='/')
+def myProfile(request):
     dictionary = t_dict.objects.all().order_by('id')
     instance = get_object_or_404(UserProfile, tracker=request.user.id)
 
@@ -47,9 +108,11 @@ def dashboard(request):
         'dictionary': dictionary,
     }
 
-    template = "libs/dashboard.html"
+    template = "libs/user_profile.html"
 
     return render(request, template, context)
+
+
 
 def gallery(request):
     photos = Gallery.objects.all().order_by('-id')
@@ -90,9 +153,9 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
-            # user = authenticate(username=username, password=raw_password)
-            # login(request, user)
-            return HttpResponseRedirect('/libs/register-confirmation/')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return HttpResponseRedirect('/libs/add-profile/')
     else:
         form = SignUpForm()
 
@@ -102,24 +165,6 @@ def register(request):
     return render(request, 'libs/register.html', context)
 
 
-def user_profile(request):
-    dictionary = t_dict.objects.all().order_by('id')
-    form = UserProfileForm(request.POST or None,
-                           request.FILES or None)
-    if form.is_valid():
-        f = form.save(commit=False)
-        f.save()
-        messages.success(request, "Saved")
-        return HttpResponseRedirect('/libs/register-confirmation/')
-
-    context = {
-        'dictionary': dictionary,
-        'form': form,
-    }
-
-    template = "libs/user_profile.html"
-
-    return render(request, template, context)
 
 
 def register_confirmation(request):
@@ -132,7 +177,7 @@ def register_confirmation(request):
 
     return render(request, template, context)
 
-
+@login_required(login_url='/')
 def add_dict(request):
     form = AddDictForm(request.POST or None,
                        request.FILES or None)
@@ -163,6 +208,7 @@ def accts(request):
 
     return render(request, template, context)
 
+@login_required(login_url='/')
 def ServiceProviders(request):
     dictionary = t_dict.objects.all().order_by('id')
     form = ServiceProvidersForm(request.POST or None,
@@ -182,6 +228,7 @@ def ServiceProviders(request):
 
     return render(request, template, context)
 
+@login_required(login_url='/')
 def dash(request):
     dictionary = t_dict.objects.all().order_by('id')
 

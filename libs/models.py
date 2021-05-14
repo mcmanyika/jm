@@ -16,8 +16,7 @@ def upload_location(instance, filename):
 
 class UserProfile(models.Model):
     tracker = models.IntegerField(default='')
-    fname = models.CharField(max_length=15, null=True, blank=True)
-    lname = models.CharField(max_length=15, null=True, blank=True)
+    profession = models.CharField(max_length=15, null=True, blank=True)
     gender = models.CharField(max_length=10, null=True, blank=True)
     phone = models.CharField(max_length=25, default='', null=True, blank=True)
     country = models.CharField(max_length=20, null=True, blank=True)

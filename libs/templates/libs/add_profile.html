@@ -1,0 +1,14 @@
+{% extends "libs/base.html" %} {% load static %} 
+{% block content %}
+  <div class="col-md-12">
+      <form method="post" name="form" action="" enctype="multipart/form-data">
+        {% csrf_token %} 
+        Sign up to get texts. By entering your phone number, you are consenting to 
+        receive recurring automated text messages & calls from the DNC with news & info about our work. 
+        For SMS, message & data rates may apply. Text STOP to end. Text HELP for help.
+        <input type="hidden" name="tracker" value="{{ request.user.id }}" />
+        <button type="submit" class="btn btn-danger btn-lg">I AGREE, sign me in.</button>
+      </form>
+  </div>
+{% endblock %}
+  

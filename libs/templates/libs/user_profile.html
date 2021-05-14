@@ -1,113 +1,22 @@
-{% load cms_tags menu_tags sekizai_tags static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Meta Tags -->
-    <meta charset="utf-8" />
-    <link rel="icon" href="../static/creative/img/logo.png" />
-    <meta
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      name="viewport"
-    />
-    <!-- Author -->
-    <meta name="author" content="31 July Movement" />
-    <!-- description -->
-    <meta name="description" content="" />
-    <!-- keywords -->
-    <meta name="keywords" content=" " />
-    <!-- Page Title -->
-    <title>{% block title %}31 July Movement{% endblock title %}</title>
-    {% include 'creative_head.html' %}
-    <style>
-      #video iframe {
-        height: 300px !important;
-      }
-      input {
-        font-size: 21px !important;
-      }
-    </style>
-    {% render_block "css" %}
-  </head>
-
-  <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    {% cms_toolbar %}
-
-    <!--Header Start-->
-    <header id="home">
-      <div class="inner-header">
-        <!--colored-lines-->
-        <div class="color-lines row no-gutters">
-          <div class="col-4 bg-red"></div>
-          <div class="col-4 bg-yellow"></div>
-          <div class="col-4 bg-green"></div>
-        </div>
-        <!--upper-nav-->
-        {% if request.user.is_authenticated %}
-        <div class="upper-nav">
-          <div class="container">
-            <div class="row">
-              <div class="col-6">
-                <ul class="top-personal-info">
-                  <li>
-                    <a href="{% url 'profile' %}"
-                      ><i class="las la-user"></i> Hi, {{ request.user}}</a
-                    >
-                  </li>
-                  <li>
-                    <a href="{% url 'logout' %}"
-                      ><i class="las la-running"></i> Logout</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-6 text-right">
-                <ul class="top-social-links">
-                  <li>
-                    <a
-                      href="https://www.facebook.com/jngarivhume"
-                      class="link-holder fb"
-                      ><i class="lab la-facebook-f"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.twitter.com/@31julyofficial"
-                      class="link-holder twit"
-                      ><i class="lab la-twitter"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% else %} {% endif %}
-      </div>
-    </header>
-    <!--Header End-->
-    <div class="container" style="padding-top: 40px">
-      {% block content %}
-      <div class="col-md-8">
-        <form method="post" name="form" action="" enctype="multipart/form-data">
-          {% csrf_token %} {{form.fname}} {{form.lname}}<br />
-          {{form.gender}}<br />
-          {{form.phone}} <br />
-          {{form.country}}<br />
-          <!-- <select name="country">
-            {% for rw in dictionary %}
-            {% if rw.category == 'Country' %}
-            <option value="{{rw.header}}">{{rw.header}}</option>
-            {% endif %}
-            {% endfor %}
-          </select> -->
-          <input type="hidden" name="tracker" value="{{ request.user.id }}" />
-          <button type="submit" class="btn btn-danger btn-lg">Save</button>
-        </form>
-      </div>
-      {% endblock %}
-    </div>
-    </div>
-
-    {% include 'creative_scripts.html' %} {% render_block "js" %}
-  </body>
-</html>
+{% extends "libs/baseDash.html" %} {% load static %} 
+{% block content %}
+  <div class="col-md-12">
+      <form method="post" name="form" action="" enctype="multipart/form-data">
+        {% csrf_token %} {{form.fname}} {{form.lname}}<br />
+        {{form.profession}}<br />
+        {{form.gender}}<br />
+        {{form.phone}} <br />
+        {{form.country}}<br />
+        <!-- <select name="country">
+          {% for rw in dictionary %}
+          {% if rw.category == 'Country' %}
+          <option value="{{rw.header}}">{{rw.header}}</option>
+          {% endif %}
+          {% endfor %}
+        </select> -->
+        <input type="hidden" name="tracker" value="{{ request.user.id }}" />
+        <button type="submit" class="btn btn-danger btn-lg">Save</button>
+      </form>
+  </div>
+{% endblock %}
+  

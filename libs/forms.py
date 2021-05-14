@@ -10,10 +10,8 @@ User = get_user_model()
 
 
 class UserProfileForm(forms.ModelForm):
-    fname = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
-        attrs={'class': 'form-control form-control-sm', 'placeholder': 'First Name'}), label='')
-    lname = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
-        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Last Name'}), label='')
+    profession = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control form-control-sm', 'placeholder': 'Profession'}), label='')
     gender = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
         attrs={'class': 'form-control form-control-sm', 'placeholder': 'Gender'}), label='')
     phone = forms.CharField(max_length=30, required=False, widget=forms.TextInput(
@@ -25,15 +23,22 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         fields = [
             'tracker',
-            'fname',
-            'lname',
+            'profession',
             'gender',
             'phone',
             'country',
         ]
 
+class AddProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = [
+            'tracker',
+        ]
 
 class SignUpForm(UserCreationForm):
+    username = forms.CharField(max_length=30, required=False, widget = forms.TextInput(attrs={'class' : 'form-control form-control-sm','placeholder':'Username'}), label='')
+    
     first_name = forms.CharField(max_length=30, required=False, widget = forms.TextInput(attrs={'class' : 'form-control form-control-sm','placeholder':'First Name'}), label='')
     last_name = forms.CharField(max_length=30, required=False, widget = forms.TextInput(attrs={'class' : 'form-control form-control-sm','placeholder':'Last Name'}), label='')
     
@@ -46,7 +51,7 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name',
+        fields = ('username','first_name', 'last_name',
                   'email', 'password1', 'password2', )
 
 

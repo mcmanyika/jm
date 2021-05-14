@@ -14,7 +14,8 @@ urlpatterns = [
     url(r'gallery/', gallery, name='gallery'),
     url(r'service-providers/', ServiceProviders, name='Service-Providers'),
     url(r'dash/', dash, name='dash'),
-    url(r'^', dashboard, name='dashboard'),
+    url(r'add-profile/', add_profile, name='add-profile'),
+    url(r'^', myProfile, name='myProfile'),
 
 
 

@@ -48,13 +48,11 @@
             <div class="row">
               <div class="col-6">
                 <ul class="top-personal-info">
-                  {% if user.is_superuser %}
                   <li>
                     <a href="{% url 'myProfile' %}"
                       ><i class="las la-user"></i> Hi, {{ request.user}}</a
                     >
                   </li>
-                  {% endif %}
                   <li>
                     <a href="{% url 'logout' %}"
                       ><i class="las la-running"></i> Logout</a
@@ -94,14 +92,8 @@
               <div class="card bg-light text-dark">
                   <div class="card-body">
                     <a href="/"><b>Home</b></a> <br /><br />
-                    {% for rw in userProfile %}
-                      {% if not rw.tracker == request.user.id %}
-                        Update your Profile
-                      {% else %}
-                        <a href="{% url 'profile' %}">My Profile</a> <br /><br />
-                      {% endif %}
-                    {% endfor %}
                     
+                    <a href="{% url 'myProfile' %}">My Profile</a> <br /><br />
                     {% if user.is_superuser %}
                     <a href="{% url 'accts' %}">Membership</a> <br /><br />
                     <a href="{% url 'add-dict' %}">Add Dictionary</a> <br /><br />
