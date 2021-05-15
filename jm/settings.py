@@ -232,6 +232,7 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ## Customize this
     ('newsletter.html', 'Landing Page'),
+    ('baseBlog.html', 'Blog Articles'),
     ('fullwidth.html', 'Fullwidth'),
     ('blank.html', 'Blank'),
     ('creative.html', 'Creative Theme'),
