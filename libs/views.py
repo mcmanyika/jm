@@ -69,7 +69,6 @@ def user_profile(request):
 
     return render(request, template, context)
 
-@login_required(login_url='/')
 def add_profile(request):
     dictionary = t_dict.objects.all().order_by('id')
     form = AddProfileForm(request.POST or None,
