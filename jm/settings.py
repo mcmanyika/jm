@@ -131,6 +131,7 @@ MIDDLEWARE = [
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware'
 ]
+SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 INSTALLED_APPS = [
     'djangocms_admin_style',
