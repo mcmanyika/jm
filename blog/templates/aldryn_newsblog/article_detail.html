@@ -19,11 +19,11 @@
               <h2 class="subheading">{% render_model article "lead_in" "" "" "striptags" %}</h2>
               <span class="meta">
                 {% include "aldryn_newsblog/includes/author.html" %}
-                <!-- Posted by
+                Posted by
                 <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">
                   {{ article.author.name }}
                 </a>
-                on {{ article.publishing_date|date:"F d, Y" }} -->
+                on {{ article.publishing_date|date:"F d, Y" }}
               </span>
             </div>
       </div>
@@ -33,6 +33,7 @@
 {% endblock %}
 
 {% block newsblog_content %}
+  
     {% include "aldryn_newsblog/includes/article.html" with detail_view="true" %}
 
     {% static_placeholder "newsblog_social" %}
