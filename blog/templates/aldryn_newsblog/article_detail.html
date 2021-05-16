@@ -8,7 +8,8 @@
 
 {% block header %}
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('{% if article.featured_image_id %}{% thumbnail article.featured_image 1200x400 crop subject_location=article.featured_image.subject_location %}')">
+<header class="masthead" style="background-image: url('{% if article.featured_image_id %}{% thumbnail article.featured_image 1200x400 crop subject_location=article.featured_image.subject_location %}
+{% else %}{% static 'img/landing3.png' %}{% endif %}')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -18,11 +19,11 @@
               <h2 class="subheading">{% render_model article "lead_in" "" "" "striptags" %}</h2>
               <span class="meta">
                 {% include "aldryn_newsblog/includes/author.html" %}
-                Posted by
+                <!-- Posted by
                 <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">
                   {{ article.author.name }}
                 </a>
-                on {{ article.publishing_date|date:"F d, Y" }}
+                on {{ article.publishing_date|date:"F d, Y" }} -->
               </span>
             </div>
       </div>
