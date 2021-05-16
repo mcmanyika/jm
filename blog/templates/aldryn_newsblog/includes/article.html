@@ -12,15 +12,16 @@
       <h3 class="post-title">
         {% render_model article "title" "" "" "striptags" %}
       </h3>
+      <p class="post-meta">
+        {% include "aldryn_newsblog/includes/author.html" with author=article.author %} : {{ article.publishing_date|date:"F d, Y" }}
+      </p>
       {% if article.lead_in %}
       <div style="font-weight:100 !important; color: #000">
         {% if not detail_view %} {% render_model article "lead_in" "" "" "truncatewords:'20'|striptags" %} {% else %} {% render_model article "lead_in" "" "" "striptags" %} {% endif %}
       </div>
       {% endif %}
     </a>
-    <!-- <p class="post-meta">
-      Posted by {% include "aldryn_newsblog/includes/author.html" with author=article.author %} on {{ article.publishing_date|date:"F d, Y" }}
-    </p> -->
+    
     
   </div>
   <hr />
