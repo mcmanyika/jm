@@ -19,6 +19,7 @@ urlpatterns += i18n_patterns(
     path("accounts/profile/", dash, name='dash'),
     path("accounts/", include('allauth.urls')),
     path("libs/", include('libs.urls')),
+    path("mail/", mail, name='mail'),
     path("secure/", admin.site.urls), 
     path("taggit_autosuggest/", include('taggit_autosuggest.urls')),
     path("", include("cms.urls")))

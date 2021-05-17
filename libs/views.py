@@ -246,3 +246,7 @@ def dash(request):
 def Logout(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+def mail(request):
+
+    return HttpResponseRedirect('https://gator4304.hostgator.com:2096/')
