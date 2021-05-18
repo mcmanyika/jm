@@ -2691,6 +2691,8 @@ header
   /***********************************/
   .slider-sec .inner-slider-content h4 {
     font-size: 45px;
+    padding-top: 50px;
+    text-align: left;
   }
   .standalone-row:not(:last-child) {
     margin-bottom: 8rem;
@@ -2776,4 +2778,12 @@ header
   .slider-area .slider-arrows {
     right: -11%;
   }
+}
+
+@media screen and (max-width: 400px){
+.slider-sec .inner-slider-content h4 {
+  font-size: 45px;
+  padding-top: 50px;
+  text-align: left;
+}
 }
