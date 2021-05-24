@@ -36,8 +36,9 @@
             <ul class="top-personal-info">
               {% if request.user.is_authenticated %}
               <li>
-                <a href="{% url 'myProfile' %}"
-                  ><i class="las la-user"></i> Dashboard</a
+                <a href="{% url 'myProfile' %}">
+                  <!-- <i class="las la-user"></i>  -->
+                  Dashboard</a
                 >
               </li>
               {% else %}
@@ -48,8 +49,9 @@
               </li> -->
               {% endif %}
               <li>
-                <a href="#"
-                  ><i class="las la-envelope"></i>{% placeholder 'email' %}</a
+                <a href="#">
+                  <!-- <i class="las la-envelope"></i> -->
+                  {% placeholder 'email' %}</a
                 >
               </li>
             </ul>
