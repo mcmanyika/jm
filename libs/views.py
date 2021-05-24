@@ -240,7 +240,17 @@ def dash(request):
 
     return render(request, template, context)
     
+@login_required(login_url='/')
+def photos(request):
 
+   
+    context = {
+
+    }
+
+    template = "libs/photos.html"
+
+    return render(request, template, context)
 
 
 def Logout(request):

@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'service-providers/', ServiceProviders, name='Service-Providers'),
     url(r'dash/', dash, name='dash'),
     url(r'add-profile/', add_profile, name='add-profile'),
+    url(r'photos/', photos, name='photos'),
     url(r'^', myProfile, name='myProfile'),
 
 

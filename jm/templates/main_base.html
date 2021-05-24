@@ -1,0 +1,154 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
+    <!-- Author -->
+    <meta name="author" content="31julymovement" />
+    <!-- description -->
+    <meta
+      name="description"
+      content="We are an apolitical resistance movement bringing Zimbabweans together; whether opposition or ruling party, black or white, young or old"
+    />
+    <!-- keywords -->
+    <meta
+      name="keywords"
+      content=" 31julymovement, democracy, zimbabwe, movement, jacob, ngarivhume, human rights, harare, Zimbabwe"
+    />
+    <!-- Page Title -->
+    <title>{% block title %}31 July Movement{% endblock title %}</title>
+    {% include 'creative_head.html' %} {% render_block "css" %}
+
+    {{ ALDRNYN_SNAKE.render_head }}
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    {% cms_toolbar %}
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="center">
+        <div class="loader loader-32">
+          <div class="loader-container">
+            <div class="ball-wrapper">
+              <div class="ball-holder">
+                <div class="ball"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+            <div class="ball-wrapper">
+              <div class="ball-holder">
+                <div class="ball"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+            <div class="ball-wrapper">
+              <div class="ball-holder">
+                <div class="ball"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!--Header Start-->
+    {% include 'creative_upper_blog.html' %}
+    <!--Header End-->
+
+  
+      <!--main page content-->
+      <section class="main" id="main">
+        <!--content-->
+        <div class="blog-content padding-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-12 order-1">
+                <div class="main_content text-center text-lg-left">
+                  <div class="row">
+                    <div class="blog-content padding-top padding-bottom">
+                        <div class="container">
+                            <div class="row no-gutters">
+                                <div class="col-12">
+                                    <!-- START HEADING SECTION -->
+                                        <!-- <div class="standalone-detail">
+                                            <div class="row no-gutters">
+                                                <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2  text-center wow slideInUp" data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-name: slideInUp;">
+                                                    <p class="para_text m-auto">{% placeholder 'about_us' %}</p>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <!--content-->
+                                        <div class="standalone-area">
+                                                <div class="row standalone-row align-items-center no-gutters">
+                                                    <div class="col-lg-6">
+                                                        <div class="blog-image wow hover-effect fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+                                                           {% placeholder 'image_1' %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 stand-img-des">
+                                                        <div class="d-inline-block">
+                                                            <h2 class="gradient-text1">{% placeholder 'aims_header' %}</h2>
+                                                            <p class="para_text">{% placeholder 'aims' %} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                
+                                                <!--content-->
+                                                <div class="row standalone-row align-items-center no-gutters">
+                                                    <div class="col-lg-6 order-lg-2">
+                                                        <div class="blog-image wow hover-effect fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+                                                            {% placeholder 'image_2' %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 stand-img-des">
+                                                        <div class="d-inline-block">
+                                                            <h2 class="gradient-text1">{% placeholder 'principals_header' %}</h2>
+                                                            <p class="para_text"> {% placeholder 'principals' %} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                
+                                                <!--content-->
+                                                <div class="row standalone-row align-items-center no-gutters">
+                                                    <div class="col-lg-6">
+                                                        <div class="blog-image wow hover-effect fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+                                                            {% placeholder 'image_3' %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 stand-img-des">
+                                                        <div class="d-inline-block">
+                                                            <h2 class="gradient-text1">{% placeholder 'objectives_header' %}</h2>
+                                                            <p class="para_text">{% placeholder 'objectives' %} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--content-->
+                                        </div>
+                                    <!-- END HEADING SECTION -->
+                                </div>
+                            </div>
+                        </div>
+                    {% block content %} {% placeholder "content" %} {% endblock content %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--main page content end-->
+    
+    <!--Footer Start-->
+    {% include 'creative_footer.html' %}
+    <!--Footer End-->
+
+    {% include 'creative_scripts.html' %} {% render_block "js" %}
+  </body>
+</html>

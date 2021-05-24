@@ -236,6 +236,7 @@ CMS_TEMPLATES = (
     ('baseBlog.html', 'Blog Articles'),
     ('fullwidth.html', 'Fullwidth'),
     ('blank.html', 'Blank'),
+    ('main_base.html', 'Main Base'),
     ('creative.html', 'Creative Theme'),
     ('creative_standalone_base.html', 'Creative Standalone')
 )
