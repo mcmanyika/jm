@@ -1,0 +1,118 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <link rel="icon" href="{% static '/creative/img/logo.png' %}" />
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
+    <!-- Author -->
+    <meta name="author" content="31julymovement" />
+    <!-- description -->
+    <meta
+      name="description"
+      content="We are an apolitical resistance movement bringing Zimbabweans together; whether opposition or ruling party, black or white, young or old"
+    />
+    <!-- keywords -->
+    <meta
+      name="keywords"
+      content=" 31julymovement, democracy, zimbabwe, movement, jacob, ngarivhume, human rights, harare, Zimbabwe"
+    />
+    <!-- Page Title -->
+    <title>{% block title %}31 July Movement{% endblock title %}</title>
+    {% include 'creative_head.html' %} {% render_block "css" %}
+
+    {{ ALDRNYN_SNAKE.render_head }}
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "102567031586626");
+      chatbox.setAttribute("attribution", "biz_inbox");
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v10.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    {% cms_toolbar %}
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="center">
+        <div class="loader loader-32">
+          <div class="loader-container">
+            <div class="ball-wrapper">
+              <div class="ball-holder">
+                <div class="ball"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+            <div class="ball-wrapper">
+              <div class="ball-holder">
+                <div class="ball"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+            <div class="ball-wrapper">
+              <div class="ball-holder">
+                <div class="ball"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!--Header Start-->
+    {% include 'creative_upper_blog.html' %}
+    <!--Header End-->
+
+    <!--portfolio section start-->
+    <section
+      class="portfolio-sec company-portfolio-section padding-top"
+      id="company-portfolio-section"
+    >
+      <!--main page content-->
+      <section class="main" id="main">
+        <!--content-->
+        <div class="blog-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-12 order-1">
+                <div class="main_content text-center text-lg-left">
+                  <div class="row">
+                    {% block content %} {% placeholder "content" %} {% endblock content %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--main page content end-->
+    </section>
+    <!--portfolio section end-->
+
+    <!--Footer Start-->
+    {% include 'creative_footer.html' %}
+    <!--Footer End-->
+
+    {% include 'creative_scripts.html' %} {% render_block "js" %}
+  </body>
+</html>
